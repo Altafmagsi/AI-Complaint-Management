@@ -1,8 +1,12 @@
+import sys
+from pathlib import Path
+
 import streamlit as st
 
-from src.ai_service import analyze_complaint, draft_response
-from src.case_store import create_case, get_case, list_cases, update_case
+sys.path.insert(0, str(Path(__file__).parent / "src"))
 
+from ai_service import analyze_complaint, draft_response
+from case_store import create_case, get_case, list_cases, update_case
 st.set_page_config(
     page_title="University Complaint Assistant",
     page_icon="🎓",
